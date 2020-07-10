@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Bokeh includes-->
+    <!-- link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-2.0.2.min.css" type="text/css" /-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" type="text/css" />
+    <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-2.0.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>TriDAS</title>
+  </head>
+
+<!-- Navbar with image and text -->
+<nav class="navbar navbar-light" style="background-color:#f6dd9b;">
+  <a class="navbar-brand" href="http://IP_ADDR:PORT/">
+    TriDAS
+  </a>
+</nav>
+
+<body>
+
+<!-- Container with plots -->
+<div class="container-fluid">
+
+    <div class="row mb-5">
+     <div class="col" align="center">
+        <h1>STM Images Database Explorer</h1>
+        <p class="lead"> Select one or two metadata that are stored into our STM images database. We will perform
+                         the queries for you!
+        </p>
+        <p class="lead"> Explore data thanks to an interactive plot with the possibility to download it. </p>
+     </div>
+    </div>
+
+    <div class="row no-gutters">
+
+     <div class="col-12 col-sm-6 col-md-8">
+        {% block body %}{% endblock %}
+     </div>
+
+ <div class="col-6 col-md-4">
+
+<form method="post" style="align:center;">
+     <div align="center">
+
+<div class="bootstrap-select-wrapper mt-5 mb-5">
+  <label>Select X-axis</label>
+  <select class="browser-default custom-select" title="Scegli una opzione" name="X" required>
+    <option value="" selected disabled>Please select</option>
+    <option value="FieldXSizeinnm"  >FieldSize X </option>
+    <option value="FieldYSizeinnm"  >FieldSize Y </option>
+    <option value="XOffset"  >Offset in X </option>
+    <option value="YOffset"  >Offset in Y </option>
+    <option value="ScanSpeed"  >ScanSpeed </option>
+    <option value="GapVoltage"  >GapVoltage</option>
+    <option value="LoopGain"  >LoopGain </option>
+    <option value="ScanAngle"  >ScanAngle</option>
+    <option value="Incomplete"  >Incomplete </option>
+
+  </select>
+</div>
+
+<div class="bootstrap-select-wrapper mb-5">
+  <label>Select Y-axis</label>
+  <select class="browser-default custom-select" title="Scegli una opzione" name="Y" >
+    <option value="" selected disabled>Please select</option>
+    <option value="FieldXSizeinnm"  >FieldSize X </option>
+    <option value="FieldYSizeinnm"  >FieldSize Y </option>
+    <option value="XOffset"  >Offset in X </option>
+    <option value="YOffset"  >Offset in Y </option>
+    <option value="ScanSpeed"  >ScanSpeed </option>
+    <option value="GapVoltage"  >GapVoltage</option>
+    <option value="LoopGain"  >LoopGain </option>
+    <option value="ScanAngle"  >ScanAngle</option>
+    <option value="Incomplete"  >Incomplete </option>
+
+  </select>
+</div>
+
+  <input type="submit" value="Submit"  class="btn btn-outline-primary"></input>
+
+</div>
+</form>
+
+    </div>
+
+     </div>
+
+</div>
+
+
+</body>
+</html>

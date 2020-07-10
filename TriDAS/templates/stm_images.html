@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    <title>TriDAS</title>
+  </head>
+
+  <!-- Navbar with image and text -->
+  <nav class="navbar navbar-light" style="background-color:#f6dd9b;">
+    <a class="navbar-brand">
+      TriDAS
+    </a>
+  </nav>
+
+  <body>
+
+    <!-- Simple Title -->
+    <div class="container-fluid">
+      <div class="row mb-5">
+         <div class="col" align="center">
+           <h1>Images List</h1>
+         </div>
+      </div>
+
+      <!-- Table of images -->
+      <div class="row no-gutters">
+        <div class="table-responsive">
+          {% for table in tables %}
+                      {{ table|safe }}
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+    <script>
+      $(document).ready(function() {
+
+          $('#STM').DataTable( {
+              "pagingType": "full_numbers",
+              "columnDefs": [
+                  {
+                    "render": function(data, type, row, meta){
+                       if(type === 'display'){
+                           data = '<a href="http://IP_ADDR:PORT/dashboard_stm/plot_image/?ID=' + data + '" target="_blank">' + data + '</a>';
+                       }
+
+                       return data;
+                      },
+                      "targets": 0
+                  },
+              ]
+          } );
+} );
+
+
+    </script>
+
+
+
+  </body>

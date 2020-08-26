@@ -12,7 +12,7 @@
   <!-- Navbar with image and text -->
   <nav class="navbar navbar-light" style="background-color:#f6dd9b;">
     <a class="navbar-brand">
-      TriDAS
+      TriDAS STM Images Explorer
     </a>
   </nav>
 
@@ -21,8 +21,8 @@
     <!-- Simple Title -->
     <div class="container-fluid">
       <div class="row mb-5">
-         <div class="col" align="center">
-           <h1>Images List</h1>
+         <div align="center" class="col">
+           <h1>STM Images List</h1>
          </div>
       </div>
 
@@ -43,9 +43,9 @@
               "pagingType": "full_numbers",
               "columnDefs": [
                   {
-                    "render": function(data, type, row, meta){
+                    "render": function(data, type){
                        if(type === 'display'){
-                           data = '<a href="http://IP_ADDR:PORT/dashboard_stm/plot_image/?ID=' + data + '" target="_blank">' + data + '</a>';
+                           data = '<a href="http://IP_ADDRESS:PORT/dashboard_stm/show_image/?ID=' + data + '" target="_blank">' + data + '</a>';
                        }
 
                        return data;

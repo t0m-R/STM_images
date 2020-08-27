@@ -1,4 +1,4 @@
-#STM Images Metadata Database
+# STM Images Metadata Database
 
 The STM backup folder contains all the measurements produced at the TASC laboratory  of CNR-IOM Trieste since 1998 for a total of 244.7GB and 431,000 files.
 

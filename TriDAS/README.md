@@ -1,4 +1,4 @@
-#TriDAS: Trieste Advance Data Services
+# TriDAS: Trieste Advance Data Services
 ![TriDAS](../Thesis/images/TriDAS_homepage.PNG)
 
 [Trieste Advance Data Services(TriDAS)](https://tridas.nffa.eu/ "Trieste Advance Data Services(TriDAS)") aims to serve as a hub from which researchers can access several data services. These can be classified in two broad categories: 

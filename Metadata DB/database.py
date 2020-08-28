@@ -8,6 +8,11 @@ def escape_strings(string):
 
 
 def database_connection():
+    """
+    Create an object used to open and manage a connection to a MySQL server,
+    send command and SQL statements and read the results.
+    """
+
     db_connection = mysql.connector.connect(
         host="IP_ADDRESS",
         user="USER",
@@ -20,7 +25,12 @@ def database_connection():
     return db_connection, db_cursor
 
 
-def metadata_to_db(meta, table):
+def metadata_to_db(meta: dict, table: str):
+    """
+    Connects to the database and write the metadata stored in meta
+    as a row in the table passed as string argument.
+    It automatically adds new columns if needed.
+    """
     db_connection, db_cursor = database_connection()
     db_cursor.execute("DESC TABLE_NAME")
     columns = [x[0] for x in db_cursor.fetchall()]
@@ -33,7 +43,9 @@ def metadata_to_db(meta, table):
             db_cursor.execute("ALTER TABLE {} ADD {} VARCHAR(255)".format(table,
                                                                           key))
 
-    sql = "INSERT INTO TABLE_NAME (%s) VALUES ('%s')" % (", ".join(meta.keys()), "', '".join(meta.values()))
+    sql = "INSERT INTO (%s) (%s) VALUES ('%s')" % (table,
+                                                   ", ".join(meta.keys()),
+                                                   "', '".join(meta.values()))
     db_cursor.execute(sql)
     db_connection.commit()
     return

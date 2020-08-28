@@ -15,7 +15,7 @@ A clear set of principles guiding this process has been published in the FAIR Gu
 
 The Istituto Officina dei Materiali' of the Italian National Research Council (CNR-IOM) data infrastructure hosts different services for the Nanoscience Foundries & Fine Analysis NFFA-Europe project, which brings together twenty European nanoscience research laboratories with the aim to provide open access to advanced instrumentation and theory. [3] [4]
 
-This work shows the steps taken to  make FAIR a dataset of more than 100.000 scientific images obtained using Scanning Tunnelling Microscope (STM) techniques  in the TASC laboratory at CNR-IOM of Trieste in the last 20 years. [3]
+This work shows the steps taken to  make FAIR a dataset of more than 100.000 scientific images obtained using Scanning Tunnelling Microscope (STM) techniques  in the TASC laboratory at CNR-IOM of Trieste in the last 20 years. [5]
 
 
 ## Repository structure

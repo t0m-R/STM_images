@@ -29,7 +29,10 @@ This work shows the steps taken to  make FAIR a dataset of more than 100.000 sci
 
 - `utils/`, contains .py files with functions for the STM images analysis
 
+## Grants
 
+- NEP, Nanoscience Foundries and Fine Analysis Europe|PILOT (101007417)
+- EOSC-Pillar Coordination and Harmonisation of National Inititiatives, Infrastructures and Data services in Central and Western Europe (857650)
 
 
 ## References
